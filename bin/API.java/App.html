@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerenciamento de Ferramentas</title>
+    <link rel="stylesheet" type="text/css" href="App.css">
+
+</head>
+<body>
+    <h1>Lista de Ferramentas</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Status</th>
+            <th>Data e Hora de Coleta</th>
+            <th>Data e Hora de Devolução</th>
+            <th>Mecânico Reservado</th>
+            <th>Ações</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Chave de Fenda</td>
+            <td>Ferramenta para apertar parafusos</td>
+            <td>Disponível</td>
+            <td>01/09/2023 10:00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+                <button onclick="editarFerramenta(1)">Editar</button>
+                <button onclick="reservarFerramenta(1)">Reservar</button>
+                <button onclick="confirmarExclusao(1)">Excluir</button>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Martelo</td>
+            <td>Ferramenta para bater em pregos</td>
+            <td>Disponível</td>
+            <td>01/09/2023 11:00</td>
+            <td>-</td>
+            <td>-</td>
+            <td>
+                <button onclick="editarFerramenta(2)">Editar</button>
+                <button onclick="reservarFerramenta(2)">Reservar</button>
+                <button onclick="confirmarExclusao(2)">Excluir</button>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Adicionar Nova Ferramenta</h2>
+    <form id="novaFerramentaForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br>
+
+        <label for="descricao">Descrição:</label>
+        <input type="text" id="descricao" name="descricao" required><br>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Disponível">Disponível</option>
+            <option value="Reservado">Reservado</option>
+            <option value="Em Uso">Em Uso</option>
+        </select><br>
+
+        <button type="button" onclick="adicionarFerramenta()">Adicionar</button>
+    </form>
+
+    <!-- JavaScript para manipular ações -->
+    <script src="script.js"></script>
+</body>
+</html>
